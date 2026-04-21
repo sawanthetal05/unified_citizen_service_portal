@@ -1,0 +1,1 @@
+unified citizen service portal tells about that citizen can apply online goverment services on one single platform in the they can apply for police case file, legal case file, grivence also check for various goverment shemes and in that we check also our age limitation in that schemes 
