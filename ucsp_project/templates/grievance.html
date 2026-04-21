@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Background Image using img tag -->
+<img src="{{ url_for('static', filename='images/grievance_bg.png') }}" 
+     class="grievance-img">
+
+<div class="container mt-4">
+
+    <h3 class="mb-3 text-light">Grievance Submission</h3>
+
+    <div class="card p-4 shadow-sm grievance-card">
+        <form method="POST">
+
+            <label>Citizen Name</label>
+            <input class="form-control mb-3" name="name" placeholder="Enter your full name" required>
+
+            <label>Subject</label>
+            <input class="form-control mb-3" name="subject" placeholder="Grievance subject" required>
+
+            <label>Description</label>
+            <textarea class="form-control mb-3" name="description" placeholder="Describe your issue in detail" rows="4" required></textarea>
+
+            <button class="btn btn-danger">Submit Grievance</button>
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

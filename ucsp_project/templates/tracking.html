@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Grievance Status</h2>
+
+<table class="table">
+<tr>
+<th>ID</th>
+<th>Subject</th>
+<th>Status</th>
+</tr>
+
+{% for g in grievances %}
+<tr>
+<td>{{ g.id }}</td>
+<td>{{ g.subject }}</td>
+<td>{{ g.status }}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}

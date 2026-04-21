@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="mb-4 text-center">My Complaint Status</h3>
+
+{% if cases %}
+
+<!-- Filter Buttons -->
+<div class="text-center mb-3">
+    <button class="btn btn-dark btn-sm" onclick="filterCases('All')">All</button>
+    <button class="btn btn-primary btn-sm" onclick="filterCases('Police')">Police</button>
+    <button class="btn btn-warning btn-sm" onclick="filterCases('Grievance')">Grievance</button>
+    <button class="btn btn-success btn-sm" onclick="filterCases('Legal')">Legal</button>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Department</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>PDF</th>
+        </tr>
+    </thead>
+    <tbody id="caseTable">
+        {% for case in cases %}
+        <tr data-dept="{{ case['department'] }}">
+            <td>{{ case['id'] }}</td>
+            <td>{{ case['department'] }}</td>
+            <td>{{ case['type'] }}</td>
+            <td>{{ case['description'] }}</td>
+
+            <!-- Status -->
+            <td>
+                {% if case['status'] == 'Pending' %}
+                    <span class="badge bg-warning text-dark">Pending</span>
+                {% elif case['status'] == 'In Progress' %}
+                    <span class="badge bg-info text-dark">In Progress</span>
+                {% elif case['status'] == 'Resolved' %}
+                    <span class="badge bg-success">Resolved</span>
+                {% else %}
+                    {{ case['status'] }}
+                {% endif %}
+            </td>
+
+            <!-- PDF only for Legal -->
+            <td>
+                {% if case['department'] == 'Legal' and case['case_number'] %}
+                    <a href="/download_case/{{ case['case_number'] }}"
+                       class="btn btn-sm btn-primary">
+                        Download
+                    </a>
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+<p class="text-center">No complaints submitted yet.</p>
+{% endif %}
+
+<a href="{{ url_for('dashboard') }}" class="btn btn-secondary mt-3">Back to Dashboard</a>
+
+<!-- Filter Script -->
+<script>
+function filterCases(dept) {
+    var rows = document.querySelectorAll("#caseTable tr");
+    rows.forEach(row => {
+        if (dept === "All" || row.dataset.dept === dept) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+</script>
+
+{% endblock %}

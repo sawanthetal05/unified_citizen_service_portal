@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="dashboard-bg"></div>
+
+<h2 class="text-center mb-4">Unified Citizen Service Portal</h2>
+
+<!-- Row 1 -->
+<div class="row mb-3">
+
+    <div class="col-md-4">
+        <div class="card-service text-center p-3">
+            <h5>Police Service</h5>
+            <a href="/police" class="btn btn-primary mt-2">Apply</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-service text-center p-3">
+            <h5>Grievance</h5>
+            <a href="/grievance" class="btn btn-danger mt-2">Submit</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card-service text-center p-3">
+            <h5>Government Schemes</h5>
+            <a href="/schemes" class="btn btn-success mt-2">Check</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Row 2 -->
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="card-service text-center p-3">
+            <h5>Certificate</h5>
+            <a href="/certificate" class="btn btn-warning mt-2">Generate</a>
+        </div>
+    </div>
+
+    
+
+    <div class="col-md-4">
+        <div class="card-service text-center p-3">
+            <h5>Court & Legal Assistant</h5>
+            <a href="/court_legal" class="btn btn-secondary mt-2">Open</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

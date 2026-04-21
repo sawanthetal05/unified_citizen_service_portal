@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Background Blur -->
+<div class="filecase-bg"></div>
+
+<div class="container text-center mt-5">
+    <div class="card p-4 shadow-lg" style="max-width:500px; margin:auto;">
+        <h3>Case Filed Successfully</h3>
+
+        <h4 class="text-primary mt-3">
+            Your Case Number: {{ case_number }}
+        </h4>
+
+        <!-- Download PDF Button -->
+        <a href="/download_case/{{ case_number }}" class="btn btn-primary mt-3">
+            Download Case PDF
+        </a>
+
+        <br>
+
+        <a href="/case_status" class="btn btn-success mt-3">
+            Track Case
+        </a>
+    </div>
+</div>
+
+{% endblock %}

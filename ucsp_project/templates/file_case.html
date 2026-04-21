@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Blurred Background -->
+<div class="filecase-bg"></div>
+
+<div class="container mt-4">
+    <h2 class="text-center text-white mb-4">File New Case</h2>
+
+    <div class="card p-4 shadow-lg" style="max-width:600px; margin:auto; border-radius:15px;">
+        <form method="POST">
+
+            <label>Name</label>
+            <input type="text" name="name" class="form-control mb-3" required>
+
+            <label>Case Type</label>
+            <select name="case_type" class="form-control mb-3">
+                <option>Divorce</option>
+                <option>Property Dispute</option>
+                <option>Consumer Complaint</option>
+            </select>
+
+            <label>Description</label>
+            <textarea name="description" class="form-control mb-3"></textarea>
+
+            <button class="btn btn-primary w-100">Submit Case</button>
+        </form>
+
+        <!-- Show after submit -->
+        {% if case_id %}
+        <a href="/download_case/{{ case_id }}" 
+           class="btn btn-success w-100 mt-3">
+            Download Case PDF
+        </a>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

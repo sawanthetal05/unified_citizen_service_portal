@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Blurred Background -->
+<div class="police-bg"></div>
+
+<!-- Main content container with overlay -->
+<div class="container mt-4">
+    <div class="card-overlay p-4">
+        <h3 class="mb-4">Police Complaint</h3>
+
+        <form method="POST">
+
+            <!-- Citizen Name -->
+            <input class="form-control mb-2" name="name" placeholder="Citizen Name" required>
+
+            <!-- Complaint Type -->
+            <!-- Complaint Type Dropdown -->
+<select class="form-control mb-2" name="type" id="complaintType" onchange="showOther()" required>
+    <option value="">Select Complaint Type</option>
+    <option value="Theft">Theft</option>
+    <option value="Assault">Assault</option>
+    <option value="Domestic Violence">Domestic Violence</option>
+    <option value="Kidnapping">Kidnapping</option>
+    <option value="Sexual Offences">Sexual Offences</option>
+    <option value="Murder">Murder</option>
+    <option value="Fraud">Fraud</option>
+    <option value="Cyber Crime">Cyber Crime</option>
+    <option value="Other">Other</option>
+</select>
+
+<!-- Other Complaint Type (Hidden) -->
+<input class="form-control mb-2" name="other_type" id="otherType"
+       placeholder="Enter Other Complaint Type"
+       style="display:none;">
+            <!-- Date -->
+            <input class="form-control mb-2" name="date" type="date" max="{{ today }}" required>
+
+            <!-- Location -->
+            <input class="form-control mb-2" name="location" placeholder="Location" required>
+
+            <!-- Description -->
+            <textarea class="form-control mb-2" name="description" placeholder="Describe Incident" rows="4" required></textarea>
+
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<script>
+function showOther() {
+    var type = document.getElementById("complaintType").value;
+    var otherField = document.getElementById("otherType");
+
+    if (type === "Other") {
+        otherField.style.display = "block";
+    } else {
+        otherField.style.display = "none";
+    }
+}
+</script>
+
+{% endblock %}

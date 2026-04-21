@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="text-center text-white mb-4">Check Case Status</h2>
+
+    <div class="card p-4 shadow-lg" style="max-width:600px; margin:auto; border-radius:15px;">
+        <form method="POST">
+            <label>Enter Case Number</label>
+            <input type="text" name="case_number" class="form-control mb-3" required>
+            <button class="btn btn-primary w-100">Check Status</button>
+        </form>
+
+        {% if case %}
+        <hr>
+        <h5>Case Details</h5>
+        <p><b>Name:</b> {{ case.name }}</p>
+        <p><b>Case Type:</b> {{ case.case_type }}</p>
+        <p><b>Status:</b> <span class="text-success">{{ case.status }}</span></p>
+        {% elif case is not none %}
+        <p class="text-danger mt-3">Case not found</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Blurred Background -->
+<div class="court-bg"></div>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Court & Legal Assistant</h2>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card-service">
+                <h5>Basic Legal Information</h5>
+                <a href="/legal_info" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card-service">
+                <h5>Case Status</h5>
+                <a href="/case_status" class="btn btn-success">Track</a>
+            </div>
+        </div>
+
+        
+
+        <div class="col-md-3">
+            <div class="card-service">
+                <h5>Advocate Directory</h5>
+                <a href="/advocates" class="btn btn-danger">Search</a>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card-service">
+                <h5>File Case</h5>
+                <a href="/file_case" class="btn btn-dark">Apply</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Full screen blurred background -->
+<div class="login-bg"></div>
+
+<!-- Centered login card -->
+<div class="login-container">
+    <div class="card card-form">
+        <!-- Optional circular blurred image -->
+        <img src="{{ url_for('static', filename='images/login_bg.jpg') }}" alt="Agent">
+
+        <h4 class="text-center mb-3 text-white">Agent Login</h4>
+
+        <form method="POST" action="{{ url_for('agent_login') }}">
+            <div class="mb-3">
+                <input class="form-control" name="email" type="email" placeholder="Email" required>
+            </div>
+
+            <div class="mb-3">
+                <input class="form-control" name="password" type="password" placeholder="Password" required>
+            </div>
+
+            <button class="btn btn-dark w-100">Login</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

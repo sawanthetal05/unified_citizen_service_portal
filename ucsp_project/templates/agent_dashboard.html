@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="mb-4">{{ dept }} Department - Agent Dashboard</h3>
+
+{% if data %}
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Update Status</th>
+            <th>Case PDF</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['id'] }}</td>
+            <td>{{ row['name'] }}</td>
+            <td>{{ row['description'] }}</td>
+            <td>{{ row['status'] }}</td>
+
+            <!-- Update Status -->
+            <td>
+                <form method="POST" action="/update_status">
+                    <input type="hidden" name="id" value="{{ row['id'] }}">
+                    <select name="status" class="form-select form-select-sm">
+                        <option {% if row['status']=='Pending' %}selected{% endif %}>Pending</option>
+                        <option {% if row['status']=='In Progress' %}selected{% endif %}>In Progress</option>
+                        <option {% if row['status']=='Resolved' %}selected{% endif %}>Resolved</option>
+                    </select>
+                    <button class="btn btn-success btn-sm mt-1">Update</button>
+                </form>
+            </td>
+
+            <!-- PDF Button (Only for Legal Department) -->
+            <td>
+                {% if dept == 'Legal' %}
+                <a href="/download_case/{{ row['case_number'] }}"
+                   class="btn btn-sm btn-primary">
+                    View PDF
+                </a>
+                {% else %}
+                -
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No cases found for this department.</p>
+{% endif %}
+
+{% endblock %}

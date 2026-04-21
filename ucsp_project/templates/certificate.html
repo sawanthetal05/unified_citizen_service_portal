@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate</title>
+    <style>
+        body { font-family: 'Times New Roman'; background:#f4f4f4; }
+        .box {
+            width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            border: 3px solid black;
+            background: white;
+        }
+        h2, h3 { text-align:center; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <h3>Government of Maharashtra</h3>
+    <h4 style="text-align:center;">Revenue Department</h4>
+    <h2>{{ cert_type.upper() }} CERTIFICATE</h2>
+
+    <p><b>Certificate No:</b> {{ cert_no }}</p>
+    <p><b>Date:</b> {{ today }}</p>
+
+    <hr>
+
+    {% if cert_type == "Income" %}
+        <p>
+        This is to certify that Mr./Ms. <b>{{ name }}</b>, resident of
+        <b>{{ address }}</b>, has an annual family income of
+        <b>Rs. {{ extra }}</b>.
+        </p>
+
+    {% elif cert_type == "Birth" %}
+        <p>
+        This is to certify that <b>{{ name }}</b> was born on
+        <b>{{ extra }}</b> and is a resident of <b>{{ address }}</b>.
+        </p>
+
+    {% elif cert_type == "Caste" %}
+        <p>
+        This is to certify that Mr./Ms. <b>{{ name }}</b> belongs to
+        <b>{{ extra }}</b> caste and resides at <b>{{ address }}</b>.
+        </p>
+
+    {% elif cert_type == "Domicile" %}
+        <p>
+        This is to certify that Mr./Ms. <b>{{ name }}</b> is a permanent
+        resident of <b>{{ address }}</b> for the past
+        <b>{{ extra }}</b> years.
+        </p>
+    {% endif %}
+
+    <p>This certificate is issued for official purposes.</p>
+
+    <br><br>
+    <div style="display:flex; justify-content:space-between;">
+        <div>Place: Mumbai</div>
+        <div>
+            Signature: ___________<br>
+            Tehsildar Seal
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

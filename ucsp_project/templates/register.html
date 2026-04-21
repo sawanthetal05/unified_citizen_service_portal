@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="center-box">
+    <div class="form-card">
+        <h2 class="text-center">Citizen Registration</h2>
+
+        <form method="POST">
+            <input class="form-control mb-2" name="name" placeholder="Full Name">
+            <input class="form-control mb-2" name="email" placeholder="Email">
+            <input class="form-control mb-2" name="mobile" placeholder="Mobile">
+            <input class="form-control mb-2" name="address" placeholder="Address">
+            <input class="form-control mb-2" name="password" type="password" placeholder="Password">
+
+            <button class="btn btn-success w-100">Register</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

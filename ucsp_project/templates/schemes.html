@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Background Image -->
+<img src="{{ url_for('static', filename='images/schemes_bg.png') }}" class="schemes-img">
+
+<div class="container mt-4">
+    <h3 class="mb-3 schemes-heading">Check Eligible Schemes</h3>
+
+    <form method="POST" class="card p-3 shadow-sm schemes-card">
+        <input class="form-control mb-2" name="age" placeholder="Enter Age" required>
+        <input class="form-control mb-2" name="income" placeholder="Annual Income" required>
+
+        <select class="form-control mb-2" name="category">
+            <option>General</option>
+            <option>SC</option>
+            <option>ST</option>
+            <option>OBC</option>
+        </select>
+
+        <button class="btn btn-success">Check</button>
+    </form>
+
+    {% if schemes %}
+    <div class="mt-3 schemes-card p-3">
+        <h5>Eligible Schemes:</h5>
+        <ul class="list-group">
+            {% for s in schemes %}
+            <li class="list-group-item">{{ s }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

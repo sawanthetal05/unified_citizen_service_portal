@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Blurred Background -->
+<div class="certificate-bg"></div>
+
+<div class="container mt-5">
+    <div class="card-overlay p-4 shadow">
+        <h3 class="text-center text-white">Apply for Certificate</h3>
+
+        <form method="POST">
+
+            <label class="text-white">Certificate Type</label>
+            <select class="form-control mb-3" name="cert_type" required>
+                <option value="Income">Income Certificate</option>
+                <option value="Birth">Birth Certificate</option>
+                <option value="Caste">Caste Certificate</option>
+                <option value="Domicile">Domicile Certificate</option>
+            </select>
+
+            <input class="form-control mb-3" name="name" placeholder="Full Name" required>
+            <input class="form-control mb-3" name="address" placeholder="Address" required>
+
+            <input class="form-control mb-3" name="extra"
+                   placeholder="Enter Income / Date of Birth / Caste / Years of Residence"
+                   required>
+
+            <button class="btn btn-primary w-100">Generate Certificate</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

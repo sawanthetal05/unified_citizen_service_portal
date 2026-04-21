@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="mb-4">Advocate Contact Directory</h3>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Adv. Rajesh Sharma</td>
+            <td>Family Law</td>
+            <td>9876543210</td>
+        </tr>
+        <tr>
+            <td>Adv. Meena Patil</td>
+            <td>Property Law</td>
+            <td>9123456780</td>
+        </tr>
+        <tr>
+            <td>Adv. Amit Desai</td>
+            <td>Consumer Law</td>
+            <td>9988776655</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="{{ url_for('index') }}" class="btn btn-secondary">Back</a>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="text-center text-white mb-4">Basic Legal Information</h2>
+
+    <div class="card p-4 shadow-lg" style="border-radius:15px;">
+
+        <ul style="font-size:18px; line-height:1.8;">
+
+            <li>
+                <strong>Divorce</strong><br>
+                You can file a divorce petition in family court under mutual consent or contested divorce.
+            </li>
+
+            <li class="mt-3">
+                <strong>Property Dispute</strong><br>
+                Property disputes are handled in civil courts based on ownership documents.
+            </li>
+
+            <li class="mt-3">
+                <strong>Consumer Complaint</strong><br>
+                You can file a complaint in Consumer Court for defective products or poor service.
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/dashboard" class="btn btn-primary btn-lg w-50">Back to Dashboard</a>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,240 @@
+/* ---------- Existing Styles ---------- */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #4facfe, #00f2fe); /* fallback gradient */
+}
+
+/* Navbar shadow */
+.navbar {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Page headings */
+h2, h3 {
+    color: white;
+    font-weight: bold;
+}
+
+/* Container spacing */
+.container {
+    margin-top: 30px;
+}
+
+/* Service cards */
+.card-service {
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+    background: rgba(255,255,255,0.9); /* slightly transparent for blur effect */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-service h5 {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.card-service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* ---------- Login / Agent Login Styles ---------- */
+
+/* Full screen login background */
+.login-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/login_bg.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1; /* behind the form */
+}
+
+/* Centered login container */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card overlay for login */
+.card-form {
+    background-color: rgba(0,0,0,0.8);  /* black with transparency */
+    color: rgb(30, 29, 29);                        /* text color white */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Circular user image on card */
+.card-form img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    filter: blur(1px);
+}
+
+/* ---------- Index Page Background ---------- */
+.index-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/index_bg.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1; /* behind main content */
+}
+
+/* Centered index content */
+.index-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+/* ---------- Police Service Page Background ---------- */
+.police-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/police_bg.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1; /* behind content */
+}
+.card-overlay {
+    background-color: rgba(0,0,0,0.6); /* semi-transparent black */
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+}
+.grievance-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(6px);   /* blur effect */
+    z-index: -1;         /* form च्या मागे ठेवण्यासाठी */
+}
+
+/* Container content should stay above background */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Form card overlay (so form clearly visible) */
+.grievance-card {
+    background-color: rgba(0, 0, 0, 0.7); /* transparent black */
+    color: white;
+    border-radius: 10px;
+}
+/* ---------- Schemes Background Image ---------- */
+.schemes-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(6px);   /* blur effect */
+    z-index: -1;         /* content च्या मागे */
+}
+
+/* Content should stay above background */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay card for schemes content */
+.schemes-card {
+    background-color: rgba(0, 0, 0, 0.7); /* transparent black */
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+.schemes-heading {
+    color: black;
+}
+/* Certificate Page Background */
+.certificate-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url("/static/images/certificate_form_bg.jpg") no-repeat center center/cover;
+
+    filter: blur(8px);
+    z-index: -1;
+}
+/* Court & Legal Page Background */
+.court-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/static/images/court_legal_bg.jpg") no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+/* File Case Background */
+.filecase-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/static/images/file_case_bg.jpg") no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+/* Dashboard Background */
+.dashboard-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/dashboard_bg.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(6px);
+    z-index: -1;
+}
+.agent-login-btn {
+    color: #ffffff !important;  /* makes text visible */
+}
